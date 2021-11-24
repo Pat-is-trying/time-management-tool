@@ -1,20 +1,19 @@
 <template>
   <div>
-    <h1>{{ loading }}</h1>
-    <div v-if="loading">
-      <h1>LOADING</h1>
-    </div>
-    <div v-else class="container">
-      <h2>{{ name }}</h2>
-    </div>
+    <nav-bar></nav-bar>
+    <router-view></router-view>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent, ref } from "@vue/composition-api";
 import axios from "axios";
+import NavBar from "./templates/NavBar.vue";
 
 export default defineComponent({
+  components: {
+    NavBar,
+  },
   setup() {
     console.log("start of setup!");
     const name = "PATRICK";
