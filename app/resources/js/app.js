@@ -1,6 +1,7 @@
 import Vue from 'Vue';
 import VueRouter from 'vue-router';
 import LandingPage from "./components/LandingPage"
+import routes from "./components/router/Router";
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -8,10 +9,6 @@ import LandingPage from "./components/LandingPage"
  */
 
 require('./bootstrap');
-
-window.Vue = require('vue').default;
-
-Vue.use(VueRouter)
 
 /**
  * The following block of code may be used to automatically register your
@@ -25,8 +22,11 @@ Vue.use(VueRouter)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
 Vue.component('landing-page', require('./components/LandingPage.vue').default);
+Vue.use(VueRouter)
 
-import router from "./components/router/Router";
+const router = new VueRouter({
+    routes
+});
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -35,9 +35,9 @@ import router from "./components/router/Router";
  */
 
 window.onload = function () {
-    const app = new Vue({
+    let app = new Vue({
         el: "#app",
         router: router,
         render: h => h(LandingPage),
-    })
+    });
 }

@@ -1,18 +1,31 @@
 import Dashboard from "../views/Dashboard";
 import OpenItems from "../views/OpenItems";
-import VueRouter from "vue-router";
+import PageNotFound from "../views/PageNotFound";
 
-const router = new VueRouter({
-    routes: [
-        {
-            path: '/dashboard',
-            component: Dashboard,
-        },
-        {
-            path: '/open-items',
-            component: OpenItems,
-        },
-    ]
-});
+const routes = [
+    {
+        path: '/',
+        redirect: { name: 'dashboard' }
+    },
+    {
+        path: '*',
+        redirect: { name: 'pageNotFound' }
+    },
+    {
+        path: '/dashboard',
+        name: 'dashboard',
+        component: Dashboard,
+    },
+    {
+        path: '/open-items',
+        name: 'openItems',
+        component: OpenItems,
+    },
+    {
+        path: '/page-not-found',
+        name: 'pageNotFound',
+        component: PageNotFound,
+    },
+];
 
-export default router;
+export default routes;

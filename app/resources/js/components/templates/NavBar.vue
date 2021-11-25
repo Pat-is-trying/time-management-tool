@@ -1,8 +1,10 @@
 <template>
   <nav class="top-navbar">
     <div class="navbar-section">
-      <a class="navbar-item" href="#">Dashboard</a>
-      <a class="navbar-item" href="#">Open Items</a>
+      <router-link class="navbar-item" to="/dashboard"> Dashboard </router-link>
+      <router-link class="navbar-item" to="/open-items">
+        Open Tasks
+      </router-link>
     </div>
     <div class="navbar-section">
       <a class="navbar-item" href="#">History</a>
