@@ -1,5 +1,6 @@
 import Dashboard from "../views/Dashboard";
 import OpenItems from "../views/OpenItems";
+import Temp from "../views/Temp";
 import PageNotFound from "../views/PageNotFound";
 
 const routes = [
@@ -20,6 +21,11 @@ const routes = [
         path: '/open-items',
         name: 'openItems',
         component: OpenItems,
+    },
+    {
+        path: '/temp',
+        name: 'temporary',
+        component: Temp,
     },
     {
         path: '/page-not-found',

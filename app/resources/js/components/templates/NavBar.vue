@@ -1,13 +1,11 @@
 <template>
   <nav class="top-navbar">
     <div class="navbar-section">
-      <router-link class="navbar-item" to="/dashboard"> Dashboard </router-link>
-      <router-link class="navbar-item" to="/open-items">
-        Open Tasks
-      </router-link>
+      <router-link class="navbar-item" to="/dashboard">Dashboard</router-link>
+      <router-link class="navbar-item" to="/open-items">Open Tasks</router-link>
     </div>
     <div class="navbar-section">
-      <a class="navbar-item" href="#">History</a>
+      <router-link class="navbar-item" to="/temp">Temporary</router-link>
     </div>
   </nav>
 </template>
@@ -22,8 +20,10 @@ export default defineComponent({
 
 <style scoped>
 .top-navbar {
+  position: sticky;
+  width: 100%;
   display: flex;
-  background: coral;
+  background: rgba(15, 76, 92, 0.9);
   justify-content: space-between;
   padding: 4px;
 }
@@ -32,7 +32,8 @@ export default defineComponent({
   flex-direction: row;
 }
 .navbar-item {
-  margin: 6px;
+  color: white;
+  margin: 12px;
   padding: 4px;
   text-decoration: none;
 }

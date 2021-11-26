@@ -1,7 +1,9 @@
 <template>
   <div>
     <nav-bar></nav-bar>
-    <router-view></router-view>
+    <div class="main-page">
+      <router-view></router-view>
+    </div>
   </div>
 </template>
 
@@ -33,3 +35,6 @@ export default defineComponent({
   },
 });
 </script>
+
+<style>
+</style>
